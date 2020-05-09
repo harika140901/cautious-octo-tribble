@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Welcome</title>
+  </head>
+  <body>
+    <h1>To Do App Manager</h1>
+    <form action='/addtodo/' method="post">{% csrf_token %}
+      <input type="text" name="content">
+      <input type="submit" name="button" value="Add To List">
+    </form>
+
+    <ul>
+      {% for i in x %}
+      <li>{{i.content}}
+        <form action='/delete/{{i.id}}/'
+         style="display:inline"
+         method="post">{% csrf_token %}
+          <input type="submit" name="button" value="delete">
+        </form>
+      </li>
+      {% endfor %}
+    </ul>
+
+
+</form>
+  </body>
+</html>
