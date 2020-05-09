@@ -1,3 +1,3 @@
-working with django
+DJANGO
 
-to-d- web application
+to-do web application
